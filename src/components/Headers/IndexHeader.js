@@ -46,6 +46,7 @@ export default  function IndexHeader(props) {
               style={{width:"6em",height:"6em", marginTop:"40px"}}
               src={require("assets/img/download.png")}
             />
+            <h3 style={{color:"black"}} ><b>See more</b></h3>
            
           </div>
           
