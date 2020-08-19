@@ -7,7 +7,7 @@ import React, {
 // reactstrap components
 import { Container } from "reactstrap";
 
-import ChatComponent from "../ChatComponent.js"
+import PlantMessageComponent from "../PlantMessageComponent.js"
 // core components
 
 export default  function IndexHeader(props) {
@@ -39,7 +39,7 @@ export default  function IndexHeader(props) {
         ></div>
         <Container>
           <div className="content-center brand">
-            <ChatComponent modVal={props.modVal}/>
+            <PlantMessageComponent modVal={props.modVal}/>
             <img
               alt="..."
               className=""
