@@ -5,46 +5,34 @@ import React, { useState,
 import {Button,
 
 } from "reactstrap";
+import axios from 'axios';
 
 
 
 // deactivate ad block  <<<<------
 
 export default function ChatComponent(props) {
-    
-
-   
-    // var iden_dev="ujATs9PznpcsjwSUQueKHs"
-    // var iden_dev_arduino="ujATs9PznpcsjzEtrr7jae"
-   
-
-    
 
     const [messageHumidity,setmessageHumidity] = useState("");
     const [messageTemp,setmessageTemp] = useState("");
     const [time,setTime] = useState("");
 
     const updateHistory=()=>{
-       
-        setmessageTemp("Humidity OK")
-        setmessageHumidity("Temperature OK");
-        props.modVal(()=>{
-            let text = "Temperature: 277 C° - Humidity: 1023- Time: 15:20"
-            let arr = text.split("-")
-            if (arr.length<2){
-                return []
-            }else{
-                arr[0]=arr[0].replace("Temperature: ","");
-                arr[0]=arr[0].replace("C°","");
-                arr[0]=arr[0].trim()
-                arr[1]=arr[1].replace("Humidity: ","");
-                arr[2]=arr[2].replace(" Time: ","");
-                setTime(new Date().getHours()+":"+new Date().getMinutes());
-                // console.log(arr)
-                return arr
-            }
-            
+        axios.get('https://plant-backend.herokuapp.com/api/')
+        .then((response) => {
+            let post= response.data[0];
+            // console.log('Data has been received!!');
+            // props.modVal(post);
+            setTime(()=>{
+                return new Date(parseInt(post.date)).getHours()+":"+new Date(parseInt(post.date)).getMinutes()})
+            setmessageTemp("Humidity "+post.mex)
+            setmessageHumidity("Temperature "+post.mex);
+        })
+        .catch(() => {
+          alert('Error retrieving data!!!');
         });
+       
+        
     }
     // updateHistory()
    
@@ -54,7 +42,11 @@ export default function ChatComponent(props) {
     const viewPlantStatus = () => {        
         setmessageTemp("");
         setmessageHumidity("");
-        props.modVal([]);
+        setTime("")
+        props.modVal({ "temperature": "",
+        "humidity": "",
+        "luminosity": "",
+        });
         updateHistory()
         
     };

@@ -9,6 +9,7 @@ import {  Container, Row,Col } from "reactstrap";
 // core components
 
 export default function Sensors(props) {
+  // console.log(props)
   return (
     <>
       <div className="section section-examples" data-background-color="black">
@@ -23,8 +24,8 @@ export default function Sensors(props) {
                   style={{width:"6em",height:"6em", marginTop:"30px"}}
                   src={require("assets/img/hot.png")}
                 ></img>
-               {/* <h2 style={{color:"black",marginTop:"20px"}}>{props.val[0]} C°</h2> */}
-               <h2 style={{color:"black",marginTop:"20px"}}>28 C°</h2>
+               <h2 style={{color:"black",marginTop:"20px"}}>{props.val.temperature} C°</h2>
+               {/* <h2 style={{color:"black",marginTop:"20px"}}>28 C°</h2> */}
             </Col>
             <Col className="ml-auto mr-auto text-center sensors-box" md="3">
             <img
@@ -33,7 +34,7 @@ export default function Sensors(props) {
                   style={{width:"6em",height:"6em", marginTop:"30px"}}
                   src={require("assets/img/humidity.png")}
                 ></img>
-                <h2 style={{color:"black",marginTop:"20px"}}>{parseInt(((1023-500)/1023)*100)+"%"}</h2>
+                <h2 style={{color:"black",marginTop:"20px"}}>{parseInt(((1023-parseInt(props.val.humidity))/1023)*100)+"%"}</h2>
             </Col>
             <Col className="ml-auto mr-auto text-center sensors-box" md="3">
             <img
@@ -42,7 +43,7 @@ export default function Sensors(props) {
                   style={{width:"6em",height:"6em", marginTop:"30px"}}
                   src={require("assets/img/idea.png")}
                 ></img>
-                <h2 style={{color:"black",marginTop:"20px"}}>300 watts</h2>
+                <h2 style={{color:"black",marginTop:"20px"}}>{props.val.luminosity} watts</h2>
             </Col>
           </Row>
         </Container>

@@ -15,7 +15,7 @@ import Sensors from "./Sensors.js";
 
 function Index() {
 
-  const [values,setValues] = useState([]);
+  const [values,setValues] = useState({});
   React.useEffect(() => {
     document.body.classList.add("index-page");
    
