@@ -22,7 +22,7 @@ export default function ChatComponent(props) {
         .then((response) => {
             let post= response.data[0];
             // console.log('Data has been received!!');
-            // props.modVal(post);
+            props.modVal(post);
             setTime(()=>{
                 return new Date(parseInt(post.date)).getHours()+":"+new Date(parseInt(post.date)).getMinutes()})
             setmessageTemp("Humidity "+post.mex)

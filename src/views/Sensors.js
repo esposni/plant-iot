@@ -9,7 +9,7 @@ import {  Container, Row,Col } from "reactstrap";
 // core components
 
 export default function Sensors(props) {
-  // console.log(props)
+  console.log(props)
   return (
     <>
       <div className="section section-examples" data-background-color="black">
