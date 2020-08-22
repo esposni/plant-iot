@@ -6,7 +6,7 @@ import {Button,
 
 } from "reactstrap";
 import axios from 'axios';
-
+import AlertDialogSlide from "./PopUpButton"
 
 
 // deactivate ad block  <<<<------
@@ -55,12 +55,7 @@ export default function ChatComponent(props) {
             <>
                 <div className="box">
                     <div style={{width: "100%"}}>
-                        <img
-                            alt="..."
-                            className="rounded-circle img-fluid img-raised"
-                            style={{width:"6em",height:"6em", marginTop:"30px"}}
-                            src={require("assets/img/logo1.png")}
-                            ></img>
+                            <AlertDialogSlide/>
                     </div>
                     <div style={{color:"black",width: "100%"}}>
                         <h5>{messageTemp}</h5>
