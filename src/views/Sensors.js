@@ -24,7 +24,7 @@ export default function Sensors(props) {
                   style={{width:"6em",height:"6em", marginTop:"30px"}}
                   src={require("assets/img/hot.png")}
                 ></img>
-               <h2 style={{color:"black",marginTop:"20px"}}>{props.val.temperature} C°</h2>
+               <h2 style={{color:"black",marginTop:"20px"}}>{parseInt(props.val.temperature)} C°</h2>
                {/* <h2 style={{color:"black",marginTop:"20px"}}>28 C°</h2> */}
             </Col>
             <Col className="ml-auto mr-auto text-center sensors-box" md="3">
@@ -43,7 +43,7 @@ export default function Sensors(props) {
                   style={{width:"6em",height:"6em", marginTop:"30px"}}
                   src={require("assets/img/idea.png")}
                 ></img>
-                <h2 style={{color:"black",marginTop:"20px"}}>{props.val.luminosity} watts</h2>
+                <h2 style={{color:"black",marginTop:"20px"}}>{parseInt(props.val.luminosity)} watts</h2>
             </Col>
           </Row>
         </Container>
