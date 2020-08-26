@@ -13,7 +13,7 @@ import AlertDialogSlide from "./PopUpButton"
 
 export default function ChatComponent(props) {
 
-    const [messageHumidity,setmessageHumidity] = useState("");
+    // const [messageHumidity,setmessageHumidity] = useState("");
     const [messageTemp,setmessageTemp] = useState("");
     const [time,setTime] = useState("");
 
@@ -25,8 +25,8 @@ export default function ChatComponent(props) {
             props.modVal(post);
             setTime(()=>{
                 return new Date(parseInt(post.date)).getHours()+":"+new Date(parseInt(post.date)).getMinutes()})
-            setmessageTemp("Humidity "+post.mex)
-            setmessageHumidity("Temperature "+post.mex);
+            setmessageTemp(post.mex)
+            // setmessageHumidity("Temperature "+post.mex);
         })
         .catch(() => {
           alert('Error retrieving data!!!');
@@ -41,7 +41,7 @@ export default function ChatComponent(props) {
 
     const viewPlantStatus = () => {        
         setmessageTemp("");
-        setmessageHumidity("");
+        // setmessageHumidity("");
         setTime("")
         props.modVal({ "temperature": "",
         "humidity": "",
@@ -59,7 +59,7 @@ export default function ChatComponent(props) {
                     </div>
                     <div style={{color:"black",width: "100%"}}>
                         <h5>{messageTemp}</h5>
-                        <h5>{messageHumidity}</h5>
+                        {/* <h5>{messageHumidity}</h5> */}
                     </div>
                     <div style={{color:"black",width: "100%"}}>{time}</div>
                 </div>
