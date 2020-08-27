@@ -43,7 +43,7 @@ export default function Sensors(props) {
                   style={{width:"6em",height:"6em", marginTop:"30px"}}
                   src={require("assets/img/idea.png")}
                 ></img>
-                <h2 style={{color:"black",marginTop:"20px"}}>{parseInt(props.val.luminosity)} watts</h2>
+                <h2 style={{color:"black",marginTop:"20px"}}>{parseInt(((1023-parseInt(props.val.luminosity))/1023)*100)+"%"}</h2>
             </Col>
           </Row>
         </Container>
