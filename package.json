@@ -7,12 +7,12 @@
     "@progress/kendo-react-buttons": "^3.15.0",
     "@progress/kendo-react-conversational-ui": "^3.15.0",
     "@progress/kendo-react-intl": "^3.15.0",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "moment": "2.24.0",
     "node-sass": "^4.12.0",
     "node-telegram-bot-api": "^0.50.0",
     "nouislider": "14.0.2",
-    "pushbullet": "^2.4.0",
+    "pushbullet": "^2.0.0",
     "react": "16.8.6",
     "react-bootstrap-switch": "15.5.3",
     "react-datetime": "2.16.3",
@@ -20,9 +20,9 @@
     "react-iframe": "^1.8.0",
     "react-router": "5.0.1",
     "react-router-dom": "5.0.1",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^4.0.3",
     "reactstrap": "8.0.1",
-    "telegram-mtproto": "^2.2.2"
+    "telegram-mtproto": "^1.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
